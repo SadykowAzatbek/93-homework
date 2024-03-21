@@ -8,6 +8,9 @@ export class Artist {
 
   @Prop()
   description: string;
+
+  @Prop()
+  image: string;
 }
 
 export const ArtistSchema = SchemaFactory.createForClass(Artist);
