@@ -13,9 +13,9 @@ export class AlbumsController {
   ) {}
 
   @Get()
-  getAlbums(@Query('artistId') albumId: string) {
-    if (albumId) {
-      return this.albumModel.find({artist: albumId});
+  getAlbums(@Query('artistId') artistId: string) {
+    if (artistId) {
+      return this.albumModel.find({artist: artistId});
     }
 
     return this.albumModel.find();
@@ -46,7 +46,7 @@ export class AlbumsController {
       image: file ? '/uploads/albums/' + file.filename : null,
     });
 
-    return album.save();
+    return await album.save();
   }
 
   @Delete(':id')

@@ -42,7 +42,7 @@ export class ArtistsController {
       image: file ? '/uploads/artists/' + file.filename : null,
     });
 
-    return artist.save();
+    return await artist.save();
   }
 
   @Delete(':id')
