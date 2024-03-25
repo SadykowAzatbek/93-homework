@@ -14,6 +14,7 @@ import { AuthService } from './auth/auth.service';
 import {PassportModule} from "@nestjs/passport";
 import {LocalStrategy} from "./auth/local.strategy";
 import {TokenAuthGuard} from "./auth/token-auth.guard";
+import {PermitGuard} from "./permit/permit.guard";
 
 @Module({
   imports: [
@@ -27,6 +28,6 @@ import {TokenAuthGuard} from "./auth/token-auth.guard";
     PassportModule,
   ],
   controllers: [AppController, ArtistsController, AlbumsController, TracksController, UsersController],
-  providers: [AppService, AuthService, LocalStrategy, TokenAuthGuard],
+  providers: [AppService, AuthService, LocalStrategy, TokenAuthGuard, PermitGuard],
 })
 export class AppModule {}

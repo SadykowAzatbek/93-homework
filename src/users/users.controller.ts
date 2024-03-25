@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Post, Req, UnprocessableEntityException, UseGuards} from '@nestjs/common';
+import {Body, Controller, Delete, Get, Post, Req, UnprocessableEntityException, UseGuards} from '@nestjs/common';
 import {InjectModel} from "@nestjs/mongoose";
 import {User, UserDocument} from "../schemas/user.schema";
 import mongoose, {Model} from "mongoose";
@@ -40,4 +40,6 @@ export class UsersController {
   async login(@Req() req: Request) {
     return req.user;
   }
+
+
 }
