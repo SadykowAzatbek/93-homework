@@ -41,5 +41,9 @@ export class UsersController {
     return req.user;
   }
 
-
+  @UseGuards(TokenAuthGuard)
+  @Delete('sessions')
+  async logout(@Req() req: Request) {
+    return 'logout';
+  }
 }
